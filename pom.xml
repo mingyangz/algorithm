@@ -5,9 +5,9 @@
     <artifactId>IntroductionToAlgorithm3rd</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <!--<modules>-->
-
-    <!--</modules>-->
+    <modules>
+        <module>sort</module>
+    </modules>
 
     <properties>
         <junit.version>4.12</junit.version>
