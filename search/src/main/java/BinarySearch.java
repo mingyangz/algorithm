@@ -26,7 +26,7 @@ public class BinarySearch {
     }
 
     private static void rangeCheck(int[] nums, int start, int end) {
-        if (end >= nums.length) {
+        if (end > nums.length) {
             throw new ArrayIndexOutOfBoundsException(end);
         }
         if (start < 0) {
