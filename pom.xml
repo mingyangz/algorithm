@@ -8,6 +8,7 @@
     <modules>
         <module>sort</module>
         <module>search</module>
+        <module>datastructure</module>
     </modules>
 
     <properties>
