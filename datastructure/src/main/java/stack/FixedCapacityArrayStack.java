@@ -1,22 +1,11 @@
 package stack;
 
-/**
- * LinkedList implementation of Stack of Integers.
- */
-public class LinkedListStack {
-    /**
-     * LinkedList Node.
-     */
-    private class Node {
-        int val;
-        Node next;
-    }
-
-    private Node head;
+public class FixedCapacityArrayStack {
+    private int[] s;
     private int size;
 
-    public LinkedListStack() {
-        head = null;
+    public FixedCapacityArrayStack(int capacity) {
+        s = new int[capacity];
         size = 0;
     }
 
@@ -25,11 +14,7 @@ public class LinkedListStack {
      * @param x int to be pushed
      */
     public void push(int x) {
-        Node newHead = new Node();
-        newHead.val = x;
-        newHead.next = head;
-        head = newHead;
-        size++;
+        s[size++] = x;
     }
 
     /**
@@ -37,8 +22,7 @@ public class LinkedListStack {
      * @return first element of the stack
      */
     public int pop() {
-        int top = head.val;
-        head = head.next;
+        int top = s[--size];
         return top;
     }
 
@@ -55,6 +39,6 @@ public class LinkedListStack {
      * @return true if the stack is empty
      */
     public boolean isEmpty() {
-        return head == null;
+        return size == 0;
     }
 }
