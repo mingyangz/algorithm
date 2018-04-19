@@ -1,11 +1,11 @@
 package stack;
 
-public class FixedCapacityArrayStack {
+public class ResizedArrayStack {
     private int[] s;
     private int size;
 
-    public FixedCapacityArrayStack(int capacity) {
-        s = new int[capacity];
+    public ResizedArrayStack() {
+        s = new int[1];
         size = 0;
     }
 
@@ -14,6 +14,9 @@ public class FixedCapacityArrayStack {
      * @param x int to be pushed
      */
     public void push(int x) {
+        if (size == s.length) {
+            resizeArray(size * 2);
+        }
         s[size++] = x;
     }
 
@@ -24,7 +27,18 @@ public class FixedCapacityArrayStack {
     public int pop() {
         int top = s[--size];
         s[size] = 0;
+        if (size >0 && size == s.length / 4) {
+            resizeArray(s.length / 2);
+        }
         return top;
+    }
+
+    private void resizeArray(int capacity) {
+        int[] copy = new int[capacity];
+        for (int i = 0; i < size; i++) {
+            copy[i] = s[i];
+        }
+        s = copy;
     }
 
     /**
