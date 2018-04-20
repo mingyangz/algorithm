@@ -1,11 +1,11 @@
 package stack;
 
 public class ResizedArrayStack {
-    private int[] s;
+    private int[] stack;
     private int size;
 
     public ResizedArrayStack() {
-        s = new int[1];
+        stack = new int[1];
         size = 0;
     }
 
@@ -14,10 +14,10 @@ public class ResizedArrayStack {
      * @param x int to be pushed
      */
     public void push(int x) {
-        if (size == s.length) {
+        if (size == stack.length) {
             resizeArray(size * 2);
         }
-        s[size++] = x;
+        stack[size++] = x;
     }
 
     /**
@@ -25,10 +25,10 @@ public class ResizedArrayStack {
      * @return first element of the stack
      */
     public int pop() {
-        int top = s[--size];
-        s[size] = 0;
-        if (size >0 && size == s.length / 4) {
-            resizeArray(s.length / 2);
+        int top = stack[--size];
+        stack[size] = 0;
+        if (size > 0 && size == stack.length / 4) {
+            resizeArray(stack.length / 2);
         }
         return top;
     }
@@ -36,9 +36,9 @@ public class ResizedArrayStack {
     private void resizeArray(int capacity) {
         int[] copy = new int[capacity];
         for (int i = 0; i < size; i++) {
-            copy[i] = s[i];
+            copy[i] = stack[i];
         }
-        s = copy;
+        stack = copy;
     }
 
     /**

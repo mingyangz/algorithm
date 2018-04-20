@@ -1,11 +1,11 @@
 package stack;
 
 public class FixedCapacityArrayStack {
-    private int[] s;
+    private int[] stack;
     private int size;
 
     public FixedCapacityArrayStack(int capacity) {
-        s = new int[capacity];
+        stack = new int[capacity];
         size = 0;
     }
 
@@ -14,7 +14,7 @@ public class FixedCapacityArrayStack {
      * @param x int to be pushed
      */
     public void push(int x) {
-        s[size++] = x;
+        stack[size++] = x;
     }
 
     /**
@@ -22,8 +22,8 @@ public class FixedCapacityArrayStack {
      * @return first element of the stack
      */
     public int pop() {
-        int top = s[--size];
-        s[size] = 0;
+        int top = stack[--size];
+        stack[size] = 0;
         return top;
     }
 
