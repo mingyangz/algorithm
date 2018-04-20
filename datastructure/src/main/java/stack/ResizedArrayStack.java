@@ -1,5 +1,7 @@
 package stack;
 
+import java.util.Arrays;
+
 public class ResizedArrayStack {
     private int[] stack;
     private int size;
@@ -35,10 +37,7 @@ public class ResizedArrayStack {
 
     private void resizeArray(int capacity) {
         int[] copy = new int[capacity];
-        for (int i = 0; i < size; i++) {
-            copy[i] = stack[i];
-        }
-        stack = copy;
+        stack = Arrays.copyOf(stack, capacity);
     }
 
     /**

@@ -39,6 +39,7 @@ public class LinkedListStack {
     public int pop() {
         int top = head.val;
         head = head.next;
+        size--;
         return top;
     }
 
