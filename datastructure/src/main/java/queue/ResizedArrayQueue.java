@@ -10,7 +10,7 @@ public class ResizedArrayQueue {
      * Constructor.
      */
     public ResizedArrayQueue() {
-        queue = new int[1];
+        queue = new int[2];
         size = 0;
         head = 0;
         tail = 0;
@@ -49,13 +49,12 @@ public class ResizedArrayQueue {
 
     private void resizeArray(int capacity) {
         int[] copy = new int[capacity];
-        tail = queue.length - 1;
-        for (int i = 0; i < queue.length; i++) {
-            head = (head + i) % queue.length;
-            copy[i] = queue[head];
+        for (int i = 0; i < size; i++) {
+            copy[i] = queue[(head + i) % queue.length];
         }
         queue = copy;
         head = 0;
+        tail = size;
     }
 
     /**

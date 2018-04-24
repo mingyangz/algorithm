@@ -37,7 +37,7 @@ public class LinkedListQueue {
     public int dequeue() {
         int item = head.item;
         head = head.next;
-        if (tail.next == null) {
+        if (head == null) {
             tail = null;
         }
         return item;
