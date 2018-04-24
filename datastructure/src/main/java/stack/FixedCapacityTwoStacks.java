@@ -8,6 +8,10 @@ public class FixedCapacityTwoStacks {
     private int firstStackSize;
     private int secondStackSize;
 
+    /**
+     * construct two stacks.
+     * @param capacity size of array
+     */
     public FixedCapacityTwoStacks(int capacity) {
         stacks = new int[capacity];
         firstStackSize = 0;
