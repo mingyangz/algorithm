@@ -2,6 +2,9 @@ package queue;
 
 import stack.ResizedArrayStack;
 
+/**
+ * 10.1-6
+ */
 public class TwoStacksQueue {
     private ResizedArrayStack in;
     private ResizedArrayStack out;
@@ -14,6 +17,7 @@ public class TwoStacksQueue {
 
     public void enqueue(int x) {
         in.push(x);
+        size++;
     }
 
     public int dequeue() {
@@ -22,6 +26,7 @@ public class TwoStacksQueue {
                 out.push(in.pop());
             }
         }
+        size--;
         return out.pop();
     }
 

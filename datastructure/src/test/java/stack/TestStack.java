@@ -30,4 +30,17 @@ public class TestStack {
         assertEquals(1, stack.pop());
         assertEquals(4, stack.pop());
     }
+
+    @Test
+    public void testTwoQueuesStack() {
+        TwoQueuesStack stack = new TwoQueuesStack();
+        stack.push(4);
+        stack.push(1);
+        stack.push(3);
+        assertEquals(3, stack.pop());
+        stack.push(8);
+        assertEquals(8, stack.pop());
+        assertEquals(1, stack.pop());
+        assertEquals(4, stack.pop());
+    }
 }
