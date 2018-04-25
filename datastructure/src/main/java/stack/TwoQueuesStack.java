@@ -10,12 +10,19 @@ public class TwoQueuesStack {
     private ResizedArrayQueue secondQueue;
     private int size;
 
+    /**
+     * construct stack.
+     */
     public TwoQueuesStack() {
         firstQueue = new ResizedArrayQueue();
         secondQueue = new ResizedArrayQueue();
         size = 0;
     }
 
+    /**
+     * add item to stack.
+     * @param x item
+     */
     public void push(int x) {
         if (firstQueue.isEmpty()) {
             firstQueue.enqueue(x);
@@ -31,6 +38,10 @@ public class TwoQueuesStack {
         size++;
     }
 
+    /**
+     * retrieve and remove the first item.
+     * @return item
+     */
     public int pop() {
         size--;
         if (!firstQueue.isEmpty()) {
@@ -39,6 +50,7 @@ public class TwoQueuesStack {
             return secondQueue.dequeue();
         }
     }
+
 
     public boolean isEmpty() {
         return size == 0;
