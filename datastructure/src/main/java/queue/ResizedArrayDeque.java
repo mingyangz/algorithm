@@ -6,7 +6,9 @@ public class ResizedArrayDeque {
     private int head;
     private int tail;
 
-    // construct an empty deque
+    /**
+     * construct an empty deque.
+     */
     public ResizedArrayDeque() {
         deque = new int[2];
         size = 0;
@@ -14,17 +16,26 @@ public class ResizedArrayDeque {
         tail = 0;
     }
 
-    // is the deque empty?
+    /**
+     * check if deque is empty.
+     * @return true if deque is empty
+     */
     public boolean isEmpty() {
         return size == 0;
     }
 
-    // return the number of items on the deque
+    /**
+     * number of items on the deque.
+     * @return number of items on the deque
+     */
     public int size() {
         return size;
     }
 
-    // add the item to the front
+    /**
+     * add the item to the front.
+     * @param x item
+     */
     public void addFirst(int x) {
         if (size == deque.length) {
             resize(deque.length * 2);
@@ -36,7 +47,10 @@ public class ResizedArrayDeque {
         size++;
     }
 
-    // add the item to the end
+    /**
+     * add the item to the end.
+     * @param x item
+     */
     public void addLast(int x) {
         if (size == deque.length) {
             resize(deque.length * 2);
@@ -48,7 +62,10 @@ public class ResizedArrayDeque {
         size++;
     }
 
-    // remove and return the item from the front
+    /**
+     * remove and return the item from the front.
+     * @return item from the front
+     */
     public int removeFirst() {
         if (size > 0 && size == deque.length / 4) {
             resize(deque.length / 2);
@@ -59,7 +76,10 @@ public class ResizedArrayDeque {
         return deque[++head];
     }
 
-    // remove and return the item from the end
+    /**
+     * remove and return the item from the end.
+     * @return item from the end
+     */
     public int removeLast() {
         if (size > 0 && size == deque.length / 4) {
             resize(deque.length / 2);
