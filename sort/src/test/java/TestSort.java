@@ -11,16 +11,16 @@ public class TestSort {
     }
 
     @Test
-    public void ex2_1_1() {
-        int[] nums = {31, 41, 59, 26, 41, 58};
+    public void testInsertionSort() {
+        int[] nums = {9, 4, 3, 2, 1, 6};
         InsertionSort.sort(nums);
         assertTrue(SortTestUtils.isSorted(nums));
     }
 
     @Test
-    public void testInsertionSort() {
-        int[] nums = {9, 4, 3, 2, 1, 6};
-        InsertionSort.sort(nums);
-        assertTrue(SortTestUtils.isSorted(nums));
+    public void ex2_1_2() {
+        int[] nums = {31, 41, 59, 26, 41, 58};
+        InsertionSort.reversedSort(nums);
+        assertTrue(SortTestUtils.isReversedSorted(nums));
     }
 }
