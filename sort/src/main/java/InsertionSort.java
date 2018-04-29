@@ -32,4 +32,28 @@ public class InsertionSort {
             }
         }
     }
+
+    /**
+     * sort array of integers in increasing order recursively.
+     * @param nums array of integers
+     */
+    public static void recursiveSort(int[] nums) {
+        recursiveSort(nums, nums.length);
+    }
+
+    /**
+     * sort array of integers in increasing order recursively in range [0, end).
+     * @param nums array of integers
+     */
+    private static void recursiveSort(int[] nums, int end) {
+        if (end == 1) {
+            return;
+        }
+        recursiveSort(nums, end - 1);
+        int curr = end - 1;
+        while (curr > 0 && nums[curr] < nums[curr - 1]) {
+            SortUtils.swap(nums, curr - 1, curr);
+            curr--;
+        }
+    }
 }

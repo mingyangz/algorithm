@@ -30,4 +30,18 @@ public class TestSort {
         InsertionSort.reversedSort(nums);
         assertTrue(SortTestUtils.isReversedSorted(nums));
     }
+
+    @Test
+    public void ex2_3_4() {
+        int[] nums = {31, 41, 59, 26, 41, 58};
+        InsertionSort.recursiveSort(nums);
+        assertTrue(SortTestUtils.isSorted(nums));
+    }
+
+    @Test
+    public void ex2_3_2() {
+        int[] nums = {3, 41, 52, 26, 38, 57, 9, 49};
+        MergeSort.sort(nums);
+        assertTrue(SortTestUtils.isSorted(nums));
+    }
 }
