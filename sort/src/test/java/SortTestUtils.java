@@ -32,4 +32,24 @@ public class SortTestUtils {
         }
         return true;
     }
+
+    /**
+     * EX 2-4. Find the number of inversions in an array in range [low, high), brute force.
+     * @param nums an array of integers
+     * @return the number of inversions
+     */
+    public static int numberOfInversions(int[] nums) {
+        if (nums == null) {
+            return 0;
+        }
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] > nums[j]) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 }

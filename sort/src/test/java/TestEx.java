@@ -21,4 +21,10 @@ public class TestEx {
         assertEquals(0, sum[2]);
         assertEquals(0, sum[3]);
     }
+
+    @Test
+    public void ex2_4() {
+        int[] nums = {2, 3, 8, 6, 1};
+        assertEquals(SortTestUtils.numberOfInversions(nums), Exercise.numberOfInversions(nums));
+    }
 }
