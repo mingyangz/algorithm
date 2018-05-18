@@ -32,6 +32,13 @@ public class TestSort {
     }
 
     @Test
+    public void testHeapSort() {
+        int[] nums = {9, 4, 3, 2, 1, 6};
+        HeapSort.sort(nums);
+        assertTrue(SortTestUtils.isSorted(nums));
+    }
+
+    @Test
     public void ex2_1_2() {
         int[] nums = {31, 41, 59, 26, 41, 58};
         InsertionSort.reversedSort(nums);
@@ -49,6 +56,13 @@ public class TestSort {
     public void ex2_3_2() {
         int[] nums = {3, 41, 52, 26, 38, 57, 9, 49};
         MergeSort.sort(nums);
+        assertTrue(SortTestUtils.isSorted(nums));
+    }
+
+    @Test
+    public void ex6_4_1() {
+        int[] nums = {5, 13, 2, 25, 7, 17, 20, 8, 4};
+        HeapSort.sort(nums);
         assertTrue(SortTestUtils.isSorted(nums));
     }
 }
