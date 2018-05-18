@@ -39,6 +39,13 @@ public class TestSort {
     }
 
     @Test
+    public void testQuickSort() {
+        int[] nums = {9, 4, 3, 2, 1, 6};
+        QuickSort.sort(nums);
+        assertTrue(SortTestUtils.isSorted(nums));
+    }
+
+    @Test
     public void ex2_1_2() {
         int[] nums = {31, 41, 59, 26, 41, 58};
         InsertionSort.reversedSort(nums);
